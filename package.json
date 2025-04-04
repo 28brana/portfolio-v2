@@ -20,6 +20,7 @@
     "framer-motion": "^11.2.10",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.395.0",
+    "mixpanel-browser": "^2.63.0",
     "motion": "^12.4.2",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
+    "@types/mixpanel-browser": "^2.54.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

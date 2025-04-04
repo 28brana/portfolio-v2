@@ -1,3 +1,4 @@
+"use client";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
@@ -8,10 +9,16 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
+import { trackEvent } from "@/lib/mixpanel";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Navbar() {
+  const trackClick = (title: string) => {
+    trackEvent('SOCIAL_CLICKED', {
+      title
+    })
+  }
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -46,6 +53,9 @@ export default function Navbar() {
                   <Link
                     href={social.url}
                     target="_blank"
+                    onClick={() => {
+                      trackClick(social.name)
+                    }}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12"

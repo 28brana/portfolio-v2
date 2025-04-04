@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -6,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { trackEvent } from "@/lib/mixpanel";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,6 +42,11 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const trackClick = () => {
+    trackEvent('PROJECT_CLICKED', {
+      title
+    })
+  }
   return (
     <Card
       className={
@@ -48,6 +55,8 @@ export function ProjectCard({
     >
       <Link
         href={href || "#"}
+        target={"_blank"}
+        onClick={trackClick}
         className={cn("block cursor-pointer", className)}
       >
         {video && (

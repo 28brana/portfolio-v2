@@ -8,12 +8,14 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import PageTracker from "./PageTracker";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
+      <PageTracker eventName="HOME_PAGE_VIEW" />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
