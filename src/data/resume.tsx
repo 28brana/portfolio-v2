@@ -11,38 +11,59 @@ export const DATA = {
     "Passionate Software Engineer | Enthusiastic about coding, problem-solving, and development.",
 
   summary:
-    `Full-Stack Developer with over ${(new Date().getFullYear() - 2022) + (new Date().getMonth() >= 6 ? 0.5 : 0)} years of experience in building scalable systems, automation, and AI-driven solutions. Currently at Cozlo Technologies, working on LinkedIn scraping, AI-based tagging, and high-performance messaging systems. Previously at Sateeq, contributing to fintech solutions. Passionate about coding with 190+ LeetCode and 150+ GeeksforGeeks problems solved.`,
+    `Full-Stack Software Engineer with 4+ years of experience building scalable web applications, cloud infrastructure, automation, and AI-powered solutions. Currently at Trackier, optimizing frontend performance, modernizing legacy systems, improving application security, and processing 30M+ analytics records per day with ClickHouse. Previously worked at Cozlo Technologies as a founding engineer for Superpen, building large-scale data aggregation and messaging systems, and at Sateeq on web applications and payment integrations. Solved 200+ problems on LeetCode and 150+ on GeeksforGeeks.`,
   avatarUrl: "/me.jpg",
   skills: [
+    // Languages
     "C++",
+    "JavaScript",
+    "TypeScript",
     "HTML/CSS",
-    "Javascript",
+    "SCSS",
+
+    // Frontend
     "React.js",
     "Next.js",
-    "Node.js",
     "Tailwind CSS",
-    "Material-UI",
-    "SCSS",
     "Redux Toolkit",
+    "Ant Design",
+    "Material UI",
+    "Cypress",
+
+    // Backend
+    "Node.js",
     "Express.js",
-    "Redis",
+    "GraphQL",
+    "Socket.io",
+    "WebRTC",
+
+    // Databases & Messaging
     "MongoDB",
     "MySQL",
-    "Puppeteer",
+    "Redis",
     "Elasticsearch",
+    "ClickHouse",
+    "Kafka",
+    "BullMQ",
+
+    // Cloud & Infrastructure
     "AWS S3",
     "AWS Lambda",
     "AWS VPC",
     "AWS EC2",
-    "BullMQ",
+    "AWS SNS",
+    "AWS SQS",
+    "Azure",
+
+    // Automation & AI
+    "Puppeteer",
+    "LangChain",
+    "OpenAI",
+
+    // Testing & Tools
     "Jest",
     "Git",
     "GitHub",
-    "Socket.io",
-    "WebRTC",
-    "LangChain",
-    "OpenAI",
-    "VS Code"
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -86,65 +107,70 @@ export const DATA = {
   },
   work: [
     {
-      company: "Superpen",
+      company: "Trackier",
+      href: "https://trackier.com/",
+      badges: [],
+      location: "Noida, IN",
+      title: "Software Engineer - Full Stack",
+      logoUrl: "/trackier_logo.jpeg",
+      start: "Jul 2024",
+      end: "Present",
+      open: true,
+      skills: [
+        "React.js", "Node.js", "TypeScript", "AWS", "ClickHouse",
+        "Cypress", "Tailwind CSS",
+      ],
+      description:
+        "Led the migration of frontend infrastructure from GCP to AWS, improving scalability and deployment reliability across core products.\n" +
+        "Optimized frontend performance through code splitting, lazy loading, and caching strategies, achieving nearly 6x faster load speeds.\n" +
+        "Migrated legacy PHP modules to a modern React.js and Node.js architecture, improving maintainability and scalability.\n" +
+        "Developed and maintained an internal component library and design system used across multiple products.\n" +
+        "Implemented supply chain security prevention scripts and dependency validation workflows to improve application security.\n" +
+        "Introduced Cypress end-to-end testing with 90%+ test coverage, improving release reliability.\n" +
+        "Used ClickHouse for analytics and reporting, processing 30M+ records per day.",
+    },
+    {
+      company: "Cozlo Technologies Private Limited",
       href: "https://superpen.io/",
       badges: [],
       location: "Gurugram, IN",
-      title: "Software Engineer",
+      title: "Software Engineer - Full Stack",
       logoUrl: "/superpen.png",
       start: "Oct 2023",
-      end: "Present",
-      open: true,
+      end: "Jun 2024",
+      open: false,
       skills: [
-        "Redux", "Tailwind CSS", "React.js", "Node.js", "MongoDB",
-        "Elasticsearch", "AWS Lambda", "Open AI", "Puppeteer"
+        "React.js", "Next.js", "Node.js", "AWS Lambda", "AWS SNS",
+        "AWS SQS", "Puppeteer", "Elasticsearch", "OpenAI", "BullMQ",
+        "MongoDB", "MySQL", "Redis",
       ],
       description:
-        "Developed a LinkedIn scraping solution for profile and post aggregation, efficiently handling over 1 million posts using Puppeteer.\n" +
-        "Implemented real-time post scraping using AWS Lambda functions.\n" +
-        "Integrated Elasticsearch to enable fast and efficient post searches.\n" +
-        "Designed and applied AI models for generating relevant tags for aggregated posts.\n" +
-        "Integrated Razorpay subscription plans to enable seamless automated billing for users."
-    },
-    {
-      company: "NoApp",
-      href: "https://noapp.io/",
-      badges: [],
-      location: "Gurugram, IN",
-      title: "Software Engineer",
-      logoUrl: "/noapp.jpg",
-      start: "Oct 2023",
-      end: "Present",
-      open: true,
-      skills: [
-        "Node.js", "React.js", "Next.js", "AWS SQS", "AWS SNS",
-        "BullMQ", "MongoDB", "MySQL", "Redis", "Socket.io"
-      ],
-      description:
-        "Designed and built a wallet feature enabling users to broadcast messages to contacts, managing a database of over 7 million entries.\n" +
-        "Developed a scalable MySQL-based system for user plans, permissions, and limits, ensuring efficient user administration.\n" +
-        "Streamlined real-time message handling using Meta WhatsApp webhook integrations with AWS SNS, SQS, socket, and pub-sub architectures."
+        "Worked on two major products, serving as a founding engineer for Superpen.\n" +
+        "Built a large-scale LinkedIn scraping and aggregation system handling 1M+ posts using Puppeteer, with real-time ingestion through AWS Lambda.\n" +
+        "Integrated Elasticsearch and OpenAI models to enable fast search and automated tag generation for content discovery.\n" +
+        "Designed and developed a wallet-based messaging system supporting 7M+ records for large-scale broadcast messaging.\n" +
+        "Engineered a scalable MySQL-based system for user plans, permissions, and limits.\n" +
+        "Integrated Meta WhatsApp webhooks with AWS SNS, SQS, Redis, and pub-sub architecture for real-time communication.",
     },
     {
       company: "Sateeq",
       href: "https://sateeq.com",
-      location: "Gurugram, IN",
       badges: [],
-      title: "Software Engineer",
+      location: "Remote, IN",
+      title: "Software Engineer - Full Stack",
       logoUrl: "/sateeq.png",
       start: "Jun 2022",
       end: "Sep 2023",
-      open: true,
+      open: false,
       skills: [
-        "Next.js", "React.js", "Material-UI (MUI)", "Tailwind CSS",
-        "Jest", "Node.js", "Mixpanel", "TypeScript",
-        "MongoDB", "MySQL", "Azure"
+        "React.js", "Next.js", "TypeScript", "Node.js", "Material UI",
+        "Tailwind CSS", "MongoDB", "MySQL", "Azure", "Jest",
       ],
       description:
-        "Developed an Admin panel for managing user data and displaying metrics through charts.\n" +
-        "Integrated Razorpay for seamless payment processing and implemented webhooks for handling payment failures efficiently.\n" +
-        "Wrote migration scripts to smoothly transition existing data to the updated website version, improving system efficiency."
-    }
+        "Developed an admin dashboard for managing user data and visualizing key metrics through interactive charts.\n" +
+        "Integrated the Razorpay payment gateway and implemented webhooks to handle payment failures.\n" +
+        "Created data migration scripts to transition legacy data, improving system performance and data consistency.",
+    },
   ],
   education: [
     {
