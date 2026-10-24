@@ -5,14 +5,21 @@ export const DATA = {
   name: "Bharat Rana",
   initials: "BR",
   url: "http://localhost:3000/",
-  location: "Gurugram, HR",
-  locationLink: "https://www.google.com/maps/place/gurugram",
+  location: "Noida, UP",
+  locationLink: "https://www.google.com/maps/place/noida",
   description:
     "Passionate Software Engineer | Enthusiastic about coding, problem-solving, and development.",
 
   summary:
     `Full-Stack Software Engineer with 4+ years of experience building scalable web applications, cloud infrastructure, automation, and AI-powered solutions. Currently at Trackier, optimizing frontend performance, modernizing legacy systems, improving application security, and processing 30M+ analytics records per day with ClickHouse. Previously worked at Cozlo Technologies as a founding engineer for Superpen, building large-scale data aggregation and messaging systems, and at Sateeq on web applications and payment integrations. Solved 200+ problems on LeetCode and 150+ on GeeksforGeeks.`,
   avatarUrl: "/me.jpg",
+  status: "Building at Trackier",
+  stats: [
+    { value: "4+", label: "Years shipping production software" },
+    { value: "30M+", label: "Analytics records processed daily" },
+    { value: "6x", label: "Faster frontend load times" },
+    { value: "350+", label: "DSA problems solved" },
+  ],
   skills: [
     // Languages
     "C++",

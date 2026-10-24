@@ -32,7 +32,11 @@
       --input: 0 0% 89.8%;
       --ring: 0 0% 3.9%;
 
-      --radius: 0.5rem;
+      --radius: 0.75rem;
+
+      --brand: 252 83% 60%;
+      --brand-2: 190 90% 45%;
+      --grid-line: 0 0% 0% / 0.05;
     }
 
     .dark {
@@ -63,6 +67,10 @@
       --border: 0 0% 14.9%;
       --input: 0 0% 14.9%;
       --ring: 0 0% 83.1%;
+
+      --brand: 252 90% 72%;
+      --brand-2: 190 85% 60%;
+      --grid-line: 0 0% 100% / 0.05;
     }
   }
 
@@ -72,6 +80,30 @@
     }
     body {
       @apply bg-background text-foreground;
+    }
+    html {
+      @apply scroll-smooth;
+    }
+    ::selection {
+      background: hsl(var(--brand) / 0.25);
+    }
+  }
+
+  @layer utilities {
+    .bg-grid {
+      background-image:
+        linear-gradient(to right, hsl(var(--grid-line)) 1px, transparent 1px),
+        linear-gradient(to bottom, hsl(var(--grid-line)) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .text-gradient {
+      @apply bg-clip-text text-transparent;
+      background-image: linear-gradient(
+        110deg,
+        hsl(var(--foreground)) 30%,
+        hsl(var(--brand)) 60%,
+        hsl(var(--brand-2)) 90%
+      );
     }
   }
 
@@ -101,12 +133,10 @@
     background-color: var(--shiki-light-bg);
   }
    
-  @media (prefers-color-scheme: dark) {
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
-      color: var(--shiki-dark);
-      background-color: var(--shiki-dark-bg);
-    }
+  .dark code[data-theme*=" "],
+  .dark code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
   }
   
   code[data-line-numbers] {

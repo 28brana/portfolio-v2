@@ -49,9 +49,9 @@ export const ResumeCard = ({
       className="block cursor-pointer"
       onClick={handleClick}
     >
-      <Card className="flex">
+      <Card className="flex rounded-xl border border-transparent bg-transparent p-3 -mx-3 transition-colors hover:border-border hover:bg-card/60 hover:backdrop-blur-sm">
         <div className="flex-none">
-          <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
+          <Avatar className="border size-12 m-auto bg-white">
             <AvatarImage
               src={logoUrl}
               alt={altText}
@@ -85,11 +85,11 @@ export const ResumeCard = ({
                   )}
                 />
               </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
+              <div className="font-mono text-xs tabular-nums text-muted-foreground text-right">
                 {period}
               </div>
             </div>
-            {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
+            {subtitle && <div className="mt-1 font-sans text-xs text-muted-foreground">{subtitle}</div>}
           </CardHeader>
 
           {description && (
@@ -103,9 +103,9 @@ export const ResumeCard = ({
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm"
+              className="mt-2 overflow-hidden text-xs text-muted-foreground sm:text-sm"
             >
-              <ul className="list-disc pl-5 space-y-1">
+              <ul className="list-disc pl-5 space-y-1.5 marker:text-brand">
                 {description.split("\n").map((point, index) => (
                   <li key={index}>{point}</li>
                 ))}
@@ -115,9 +115,9 @@ export const ResumeCard = ({
 
           {/* Skills Section */}
           {skills && skills.length > 0 && (
-            <div className="mt-2 flex flex-wrap gap-1 px-2">
+            <div className="mt-3 flex flex-wrap gap-1">
               {skills?.map((skill, index) => (
-                <Badge key={index} variant="secondary" className="px-2 py-1 text-xs">
+                <Badge key={index} variant="secondary" className="rounded-full px-2 py-0.5 text-[10px] font-medium">
                   {skill}
                 </Badge>
               ))}
