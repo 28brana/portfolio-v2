@@ -22,6 +22,7 @@ interface BlurFadeProps {
   inView?: boolean;
   inViewMargin?: UseInViewOptions["margin"];
   blur?: string;
+  as?: "div" | "li";
 }
 const BlurFade = ({
   children,
@@ -33,6 +34,7 @@ const BlurFade = ({
   inView = false,
   inViewMargin = "-50px",
   blur = "6px",
+  as = "div",
 }: BlurFadeProps) => {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
@@ -42,9 +44,10 @@ const BlurFade = ({
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
+  const MotionTag = as === "li" ? motion.li : motion.div;
   return (
     <AnimatePresence>
-      <motion.div
+      <MotionTag
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
@@ -58,7 +61,7 @@ const BlurFade = ({
         className={className}
       >
         {children}
-      </motion.div>
+      </MotionTag>
     </AnimatePresence>
   );
 };

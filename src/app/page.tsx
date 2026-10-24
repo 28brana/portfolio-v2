@@ -163,7 +163,6 @@ export default function Page() {
               <ResumeCard
                 key={education.school}
                 href={education.href}
-                logoUrl={education.logoUrl}
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
@@ -239,26 +238,26 @@ export default function Page() {
               description="Over the years, I have actively participated in coding competitions, solved numerous programming challenges, and contributed to technical communities."
             />
           </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 2} inView>
-            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
-                <BlurFade
-                  key={project.title + project.dates}
-                  delay={BLUR_FADE_DELAY * 3 + id * 0.05}
-                  inView
-                >
-                  <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </ul>
-          </BlurFade>
+          <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+            {DATA.hackathons.map((project, id) => (
+              <BlurFade
+                as="li"
+                key={project.title + project.dates}
+                delay={BLUR_FADE_DELAY * 3 + id * 0.05}
+                inView
+                className="relative ml-10 py-4"
+              >
+                <HackathonCard
+                  title={project.title}
+                  description={project.description}
+                  location={project.location}
+                  dates={project.dates}
+                  image={project.image}
+                  links={project.links}
+                />
+              </BlurFade>
+            ))}
+          </ul>
         </div>
       </section>
 

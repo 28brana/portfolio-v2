@@ -15,13 +15,14 @@ export function SectionHeading({
   description,
   className,
 }: Props) {
+  const Label = title ? "div" : "h2";
   return (
     <div className={cn("space-y-2", className)}>
-      <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+      <Label className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
         <span className="text-brand">{index}</span>
         <span>{label}</span>
         <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
-      </div>
+      </Label>
       {title && (
         <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
           {title}
