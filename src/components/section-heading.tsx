@@ -23,7 +23,7 @@ export function SectionHeading({
         <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
       </div>
       {title && (
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+        <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
           {title}
         </h2>
       )}

@@ -12,7 +12,8 @@ export const DATA = {
 
   summary:
     `Full-Stack Software Engineer with 4+ years of experience building scalable web applications, cloud infrastructure, automation, and AI-powered solutions. Currently at Trackier, optimizing frontend performance, modernizing legacy systems, improving application security, and processing 30M+ analytics records per day with ClickHouse. Previously worked at Cozlo Technologies as a founding engineer for Superpen, building large-scale data aggregation and messaging systems, and at Sateeq on web applications and payment integrations. Solved 200+ problems on LeetCode and 150+ on GeeksforGeeks.`,
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/me-square.jpg",
+  portraitUrl: "/me-portrait.jpg",
   status: "Building at Trackier",
   stats: [
     { value: "4+", label: "Years shipping production software" },

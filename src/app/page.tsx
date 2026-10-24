@@ -1,10 +1,10 @@
+import { FramedPortrait } from "@/components/framed-portrait";
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { SectionHeading } from "@/components/section-heading";
 import { SpotlightCard } from "@/components/spotlight-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
@@ -23,8 +23,8 @@ export default function Page() {
     <main className="flex flex-col min-h-[100dvh] space-y-20 pb-16">
       <PageTracker eventName="HOME_PAGE_VIEW" />
       <section id="hero" className="space-y-8">
-        <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div className="flex flex-1 flex-col space-y-4">
+        <div className="flex flex-col-reverse gap-10 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-1 flex-col space-y-5">
             <BlurFade delay={BLUR_FADE_DELAY}>
               <span className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-3 py-1 font-mono text-xs text-muted-foreground backdrop-blur">
                 <span className="relative flex size-2">
@@ -35,12 +35,12 @@ export default function Page() {
               </span>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 2} yOffset={8}>
-              <h1 className="text-4xl font-semibold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Hi, I&apos;m{" "}
-                <span className="text-gradient">
-                  {DATA.name.split(" ")[0]}
-                </span>{" "}
-                👋
+              <h1 className="font-serif text-5xl leading-[0.95] tracking-tight sm:text-6xl xl:text-7xl">
+                Hi, I&apos;m
+                <br />
+                <span className="text-gradient italic pr-2">
+                  {DATA.name.split(" ")[0]}.
+                </span>
               </h1>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
@@ -78,17 +78,12 @@ export default function Page() {
               </div>
             </BlurFade>
           </div>
-          <BlurFade delay={BLUR_FADE_DELAY}>
-            <div className="relative w-fit">
-              <div
-                aria-hidden
-                className="absolute -inset-1 rounded-full bg-gradient-to-tr from-brand to-brand-2 opacity-60 blur-md"
-              />
-              <Avatar className="relative size-24 border-2 border-background sm:size-28">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </div>
+          <BlurFade delay={BLUR_FADE_DELAY} className="self-center">
+            <FramedPortrait
+              src={DATA.portraitUrl}
+              alt={DATA.name}
+              caption={`No. 01 — ${DATA.name}`}
+            />
           </BlurFade>
         </div>
       </section>
@@ -102,7 +97,7 @@ export default function Page() {
               className={STAT_SPANS[id]}
             >
               <SpotlightCard className="flex h-full flex-col justify-between gap-6 p-4">
-                <span className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                <span className="font-serif text-4xl tracking-tight text-brand sm:text-5xl">
                   {stat.value}
                 </span>
                 <span className="font-mono text-xs text-muted-foreground">
@@ -278,8 +273,9 @@ export default function Page() {
               <p className="font-mono text-xs uppercase tracking-widest text-brand">
                 07 · Contact
               </p>
-              <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl">
-                Let&apos;s build something <span className="text-gradient">great</span>
+              <h2 className="font-serif text-4xl tracking-tight sm:text-5xl">
+                Let&apos;s build something{" "}
+                <span className="text-gradient italic pr-1">great</span>
               </h2>
               <p className="text-pretty text-muted-foreground">
                 Want to chat? Drop me an email or a DM on LinkedIn and I&apos;ll

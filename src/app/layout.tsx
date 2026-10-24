@@ -7,7 +7,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Geist as FontSans, Geist_Mono as FontMono } from "next/font/google";
+import {
+  Geist as FontSans,
+  Geist_Mono as FontMono,
+  Instrument_Serif as FontSerif,
+} from "next/font/google";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -18,6 +22,13 @@ const fontSans = FontSans({
 const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
+});
+
+const fontSerif = FontSerif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -34,6 +45,7 @@ export const metadata: Metadata = {
     siteName: `${DATA.name}`,
     locale: "en_US",
     type: "website",
+    images: [{ url: DATA.avatarUrl, width: 600, height: 600, alt: DATA.name }],
   },
   robots: {
     index: true,
@@ -68,10 +80,11 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
           fontSans.variable,
-          fontMono.variable
+          fontMono.variable,
+          fontSerif.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <MotionProvider>
             <TooltipProvider delayDuration={0}>
               {children}

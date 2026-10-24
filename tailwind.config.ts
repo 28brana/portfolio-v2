@@ -22,12 +22,15 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         mono: ["var(--font-mono)", ...fontFamily.mono],
+        serif: ["var(--font-serif)", ...fontFamily.serif],
       },
       colors: {
         brand: {
           DEFAULT: "hsl(var(--brand))",
           2: "hsl(var(--brand-2))",
         },
+        frame: "hsl(var(--frame))",
+        mat: "hsl(var(--mat))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
